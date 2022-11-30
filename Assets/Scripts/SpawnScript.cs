@@ -24,9 +24,11 @@ public class SpawnScript : MonoBehaviour
 
       //player = GameObject.FindGameObjectWithTag("PersonagemTag").GetComponent<PersonagemScript>();
 
-      InvokeRepeating("AdicionaPizza", spawnTimeP, spawnTimeP);
-      InvokeRepeating("AdicionaBatata", spawnTimeB, spawnTimeB);
-      InvokeRepeating("AdicionaLanche", spawnTimeL, spawnTimeL);
+      InvokeRepeating("AdicionaAlimento", 1, 0.5f);
+
+      //InvokeRepeating("AdicionaPizza", spawnTimeP, spawnTimeP);
+      //InvokeRepeating("AdicionaBatata", spawnTimeB, spawnTimeB);
+      //InvokeRepeating("AdicionaLanche", spawnTimeL, spawnTimeL);
       InvokeRepeating("AdicionaEscudo", spawnTimeE, spawnTimeE);
    }
    
@@ -37,19 +39,34 @@ public class SpawnScript : MonoBehaviour
       var spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
       return spawnPoint;
    }
-   
-   void AdicionaPizza(){
+
+   void AdicionaAlimento(){
       var spawnPoint = CriaPosicao();
+      int vez = Random.Range(1,4);
+
+      switch(vez){
+         case 1: 
+            AdicionaBatata(spawnPoint);
+            break;
+         case 2:
+            AdicionaPizza(spawnPoint);
+            break;
+         case 3: 
+            AdicionaLanche(spawnPoint);
+            break;
+         
+      }
+   }
+   
+   void AdicionaPizza(Vector2 spawnPoint){
       Instantiate(pizza, spawnPoint, Quaternion.identity);
    }
 
-   void AdicionaBatata(){
-    var spawnPoint = CriaPosicao();
+   void AdicionaBatata(Vector2 spawnPoint){
       Instantiate(batata, spawnPoint, Quaternion.identity);
    }
 
-   void AdicionaLanche(){
-        var spawnPoint = CriaPosicao();
+   void AdicionaLanche(Vector2 spawnPoint){
       Instantiate(lanche, spawnPoint, Quaternion.identity);
    }
    

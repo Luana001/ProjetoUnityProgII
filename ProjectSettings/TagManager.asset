@@ -9,6 +9,7 @@ TagManager:
   - pizzaTag
   - escudinhoTag
   - PersonagemTag
+  - BalaTag
   layers:
   - Default
   - TransparentFX

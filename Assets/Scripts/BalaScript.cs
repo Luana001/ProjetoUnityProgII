@@ -16,11 +16,7 @@ public class BalaScript : MonoBehaviour
 
         Vector3 direction = posMouse - transform.position;
         transform.up = direction;
-        //rb.velocity = new Vector2(transform.position.x, transform.position.y).normalized * speed;
-
-        
         rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
-        
         //Vector3 rotation = transform.position - posMouse;
         //float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Euler(0, -2.7f, rot+90);
@@ -36,7 +32,28 @@ public class BalaScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-  
+    /*
+    void OnTriggerEnter2D(Collider2D outro)
+    {
+        if (outro.gameObject.tag == "batataTag")
+        {
+            Destroy(outro.gameObject);
+            Destroy(this.gameObject);
+            //Adicionar pontuacao
+        }
+
+        if (outro.gameObject.tag == "pizzaTag")
+        {
+            Destroy(outro.gameObject);
+            Destroy(this.gameObject);
+        }
+
+        if (outro.gameObject.tag == "lancheTag")
+        {
+            Destroy(outro.gameObject);
+            Destroy(this.gameObject);
+        }
+    }*/
 
     void Update()
     {
