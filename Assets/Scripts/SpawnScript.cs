@@ -1,0 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnScript : MonoBehaviour
+{
+   public GameObject batata;
+   public GameObject pizza;
+   public GameObject lanche; 
+   public GameObject escudo;
+    public PersonagemScript player;
+
+   //[SerializeField] private PersonagemScript player;
+
+    //PersonagemScript personagemScript = personagem.GetComponent<PersonagemScript>();
+
+    // Variável para conhecer quão rápido nós devemos criar novos Asteroides
+   public float spawnTimeB = 1;
+   public float spawnTimeP = 2;
+   public float spawnTimeL = 3;
+   public float spawnTimeE = 10;
+
+   void Start() {
+
+      //player = GameObject.FindGameObjectWithTag("PersonagemTag").GetComponent<PersonagemScript>();
+
+      InvokeRepeating("AdicionaPizza", spawnTimeP, spawnTimeP);
+      InvokeRepeating("AdicionaBatata", spawnTimeB, spawnTimeB);
+      InvokeRepeating("AdicionaLanche", spawnTimeL, spawnTimeL);
+      InvokeRepeating("AdicionaEscudo", spawnTimeE, spawnTimeE);
+   }
+   
+   Vector2 CriaPosicao() {
+      Renderer renderer = GetComponent<Renderer>();
+      var x1 = transform.position.x - renderer.bounds.size.x/2;
+      var x2 = transform.position.x + renderer.bounds.size.x/2;
+      var spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
+      return spawnPoint;
+   }
+   
+   void AdicionaPizza(){
+      var spawnPoint = CriaPosicao();
+      Instantiate(pizza, spawnPoint, Quaternion.identity);
+   }
+
+   void AdicionaBatata(){
+    var spawnPoint = CriaPosicao();
+      Instantiate(batata, spawnPoint, Quaternion.identity);
+   }
+
+   void AdicionaLanche(){
+        var spawnPoint = CriaPosicao();
+      Instantiate(lanche, spawnPoint, Quaternion.identity);
+   }
+   
+   void AdicionaEscudo(){
+      if(player.vidasP==1){
+      var spawnPoint = CriaPosicao();
+      Instantiate(escudo, spawnPoint, Quaternion.identity);
+      }
+   }
+}
+    
