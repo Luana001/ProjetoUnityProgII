@@ -10,6 +10,7 @@ TagManager:
   - escudinhoTag
   - PersonagemTag
   - BalaTag
+  - ChicleteTag
   layers:
   - Default
   - TransparentFX

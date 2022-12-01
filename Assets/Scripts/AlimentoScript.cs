@@ -6,8 +6,11 @@ public class AlimentoScript : MonoBehaviour
 {
     public float speed = -2;
     public int forca;
+    public int ponto;
+    private PontosScript ptScript;
 
     void Start(){
+        ptScript =  GameObject.FindGameObjectWithTag("PontuacaoTag").GetComponent<PontosScript>();
         SetVelocidade();
     }
 
@@ -31,14 +34,11 @@ public class AlimentoScript : MonoBehaviour
             }
             if (forca == 0)
             {
+                ptScript.pontos = ptScript.pontos+ponto;
                 Destroy(outro.gameObject);
                 Destroy(this.gameObject);
             }
-
-
-            //Adicionar pontuacao
         }
-
     }
 
 }

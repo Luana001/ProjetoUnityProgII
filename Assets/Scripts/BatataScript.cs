@@ -6,6 +6,7 @@ public class BatataScript : AlimentoScript
 {
     BatataScript(){
         forca = 1;
+        ponto = 1;
     }
 
 }

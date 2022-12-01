@@ -6,6 +6,7 @@ public class LancheScript : AlimentoScript
 {
     LancheScript(){
         forca = 4;
+        ponto = 6;
     }
 
 }

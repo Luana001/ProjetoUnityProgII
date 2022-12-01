@@ -6,6 +6,7 @@ public class PizzaScript : AlimentoScript
 {
     PizzaScript(){
         forca = 2;
+        ponto = 3;
     }
 
 }

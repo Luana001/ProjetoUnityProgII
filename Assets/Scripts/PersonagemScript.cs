@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class PersonagemScript : MonoBehaviour
 
 {
-    public int speed = 5;
+    public float speed = 5;
     public int vidasP = 5;
     public GameObject escudo;
 
     void Start()
     {
-        Instantiate(escudo, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+        EscudoScript script =  escudo.gameObject.GetComponent<EscudoScript>();
+        script.vidas = 4;
+        Instantiate(escudo, transform.position, Quaternion.identity, transform);
     }
 
     void Update()
@@ -61,6 +63,11 @@ public class PersonagemScript : MonoBehaviour
      }
    }
 
+    IEnumerator esperarTempo(float tempo){
+        yield return new WaitForSeconds(tempo);
+        speed = 5;
+    }
+
    void OnTriggerEnter2D (Collider2D outro){
       if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
          vidasP = vidasP - 1; 
@@ -72,9 +79,16 @@ public class PersonagemScript : MonoBehaviour
       }
       
       if(outro.gameObject.tag == "escudinhoTag"){
-         vidasP = 5;
+         vidasP = 2;
          Destroy(outro.gameObject);
          Instantiate(escudo, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+      }
+
+    if(outro.gameObject.tag == "ChicleteTag"){
+         Destroy(outro.gameObject);
+         speed = 1.6f;
+         StartCoroutine(esperarTempo(10f));
+         
       }
    }
 }

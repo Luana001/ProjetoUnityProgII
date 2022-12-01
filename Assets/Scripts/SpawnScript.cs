@@ -8,27 +8,13 @@ public class SpawnScript : MonoBehaviour
    public GameObject pizza;
    public GameObject lanche; 
    public GameObject escudo;
-    public PersonagemScript player;
-
-   //[SerializeField] private PersonagemScript player;
-
-    //PersonagemScript personagemScript = personagem.GetComponent<PersonagemScript>();
-
-    // Variável para conhecer quão rápido nós devemos criar novos Asteroides
-   public float spawnTimeB = 1;
-   public float spawnTimeP = 2;
-   public float spawnTimeL = 3;
+   public PersonagemScript player;
    public float spawnTimeE = 10;
 
    void Start() {
-
-      //player = GameObject.FindGameObjectWithTag("PersonagemTag").GetComponent<PersonagemScript>();
+      player = GameObject.FindGameObjectWithTag("PersonagemTag").GetComponent<PersonagemScript>();
 
       InvokeRepeating("AdicionaAlimento", 1, 0.5f);
-
-      //InvokeRepeating("AdicionaPizza", spawnTimeP, spawnTimeP);
-      //InvokeRepeating("AdicionaBatata", spawnTimeB, spawnTimeB);
-      //InvokeRepeating("AdicionaLanche", spawnTimeL, spawnTimeL);
       InvokeRepeating("AdicionaEscudo", spawnTimeE, spawnTimeE);
    }
    

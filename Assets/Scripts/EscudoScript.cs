@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EscudoScript : MonoBehaviour
 {
     public Sprite IHit;
     public Sprite IIHit;
     public Sprite IIIHit;
-    public int vidas = 4;
+    public int vidas = 1;
+    public int afetado = 0;
+    //public GameObject escudoChiclete;
 
     void Start()
     {
-        
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     
     void Update()
     {
-
+        atualizaEscudo();
     }
 
     public void ImageChange(Sprite newImage){
@@ -26,31 +27,44 @@ public class EscudoScript : MonoBehaviour
         spriteRenderer.sprite = newImage;
     }
 
+    IEnumerator esperarTempo(float tempo){
+        yield return new WaitForSeconds(tempo);
+        afetado=0;
+    }
+
     void OnTriggerEnter2D (Collider2D outro){
         if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
             vidas = vidas - 1;
         }
-        if(vidas == 3){
-            //SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            //spriteRenderer.sprite = IHit;
-            ImageChange(IHit);
+        else if(outro.gameObject.tag == "ChicleteTag"){
+            afetado = 1;
+            StartCoroutine(esperarTempo(10f));
+        }
+        
+    }
 
+    void atualizaEscudo(){
+        if(vidas == 3){
+            ImageChange(IHit);
         }
         else if(vidas == 2){
-            //SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            //spriteRenderer.sprite = IIHit;
             ImageChange(IIHit);
         }
         else if(vidas == 1){
-            //SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            //spriteRenderer.sprite = IIIHit;
             ImageChange(IIIHit);
         }
         else if(vidas == 0){
             Destroy(this.gameObject);
-            //transform.position = new Vector3(transform.position.x, -7f, transform.position.z);
         }
-        
+
+        if(afetado==1){
+            //Instantiate(escudoChiclete, transform.position, Quaternion.identity, transform);
+            gameObject.transform.GetChild(1).gameObject.SetActive(true); 
+        }
+        else{
+            gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            //Destroy(escudoChiclete.gameObject);
+        }
     }
 
     
