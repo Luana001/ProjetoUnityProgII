@@ -79,7 +79,7 @@ public class PersonagemScript : MonoBehaviour
       }
       
       if(outro.gameObject.tag == "escudinhoTag"){
-         vidasP = 2;
+         vidasP = 5;
          Destroy(outro.gameObject);
          Instantiate(escudo, gameObject.transform.position, Quaternion.identity, gameObject.transform);
       }

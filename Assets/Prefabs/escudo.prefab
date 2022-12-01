@@ -204,7 +204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a45e4c219a79c0c4cbcefa2e3d00a009, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -335,6 +335,14 @@ MonoBehaviour:
   IHit: {fileID: 21300000, guid: 058d598202e6d91459c6ed906409981f, type: 3}
   IIHit: {fileID: 21300000, guid: cd9dcf43ad039c742adff843fbcb0c98, type: 3}
   IIIHit: {fileID: 21300000, guid: 985726f64dba676419f57bbd2c0a7e0e, type: 3}
+  IHitV2: {fileID: 21300000, guid: e872c01e578612b45b499b3c77617769, type: 3}
+  IIHitV2: {fileID: 21300000, guid: 4e6cc1d469146f64b8b92b7c95d7e015, type: 3}
+  IIIHitV2: {fileID: 21300000, guid: 46f84e3b0867ee34c979077ffc98e841, type: 3}
+  IHitV3: {fileID: 21300000, guid: 26a57c1fad556b949a18aaa1817c9cdf, type: 3}
+  IIHitV3: {fileID: 21300000, guid: 6c216948db310f141af7d2027db0142e, type: 3}
+  IIIHitV3: {fileID: 21300000, guid: 6f7535d460926884192600948b44a07b, type: 3}
+  IHitV4: {fileID: 21300000, guid: 568c2963d5253f54785e218055ae16d6, type: 3}
+  IIHitV4: {fileID: 21300000, guid: c6bd679bf4c0e1e4b9633bb6a3d5f115, type: 3}
+  IIIHitV4: {fileID: 21300000, guid: 937dd3dcccbb218498b02268274f6daf, type: 3}
   vidas: 4
   afetado: 0
-  escudoChiclete: {fileID: 8690248137067526931, guid: 374d7bb7fca43b14086078517a29c610, type: 3}
