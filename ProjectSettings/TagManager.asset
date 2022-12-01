@@ -11,6 +11,7 @@ TagManager:
   - PersonagemTag
   - BalaTag
   - ChicleteTag
+  - PontuacaoTag
   layers:
   - Default
   - TransparentFX
