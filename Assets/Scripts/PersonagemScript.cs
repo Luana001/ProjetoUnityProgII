@@ -7,16 +7,17 @@ public class PersonagemScript : MonoBehaviour
 
 {
     public float speed = 5;
-    public int vidasP = 5;
+    public int vidasP = 7;
     public GameObject escudo;
     public int afetado = 0;
     public int invencivel = 0;
     public int tiroEspecial = 0;
+    public Sprite normal;
+    public Sprite gordinho;
+    public Sprite obeso;
     
     void Start()
     {
-        //EscudoScript script =  escudo.gameObject.GetComponent<EscudoScript>();
-        //script.vidas = 4;
         Instantiate(escudo, transform.position, Quaternion.identity, transform);
     }
 
@@ -26,6 +27,7 @@ public class PersonagemScript : MonoBehaviour
         MovimentaVertical();
         LimitarEmX();
         LimitarEmY();
+        atualizaPlayer();
     }
 
     void MovimentaHorizontal(){
@@ -104,7 +106,7 @@ public class PersonagemScript : MonoBehaviour
             Instantiate(escudo, gameObject.transform.position, Quaternion.identity, gameObject.transform);
         }
 
-        if(outro.gameObject.tag == "tomateTag" && vidasP < 6){
+        if(outro.gameObject.tag == "tomateTag" && vidasP < 8){
             vidasP = vidasP + 1;
         }
 
@@ -120,4 +122,22 @@ public class PersonagemScript : MonoBehaviour
 
         Destroy(outro.gameObject);
    }
+
+    public void ImageChange(Sprite newImage){
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = newImage;
+    }
+
+    void atualizaPlayer(){
+        if(vidasP == 3){
+            ImageChange(normal);
+        }
+        else if(vidasP == 2){
+            ImageChange(gordinho);
+        }
+        else if(vidasP == 1){
+            ImageChange(obeso);
+        }
+    }
+
 }

@@ -33,7 +33,7 @@ public class SpawnScript : MonoBehaviour
       var spawnPoint = CriaPosicao();
       int vez = Random.Range(1,4);
 
-      if(player.vidasP > 1 && player.vidasP < 5){
+      if(player.vidasP > 1 && player.vidasP < 7){
          vez = Random.Range(1,7);
          
          switch(vez){
@@ -98,7 +98,7 @@ public class SpawnScript : MonoBehaviour
 
    
    void AdicionaEscudo(){
-      if(player.vidasP==1){
+      if(player.vidasP==3){
       var spawnPoint = CriaPosicao();
       Instantiate(escudo, spawnPoint, Quaternion.identity);
       }

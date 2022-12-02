@@ -32,12 +32,12 @@ public class EscudoScript : MonoBehaviour
 
     void Update(){
 
-        if(player.vidasP==4 && vez == 1 || player.vidasP==3 && vez == 1){
+        if(player.vidasP==7 && vez == 1 || player.vidasP==6 && vez == 1){
             VariaQuebrado();
             vez = 2;
         }
 
-        if(player.vidasP == 5 && vez == 2){
+        if(player.vidasP == 7 && vez == 2){
             vez = 1;
         }
 
@@ -51,19 +51,19 @@ public class EscudoScript : MonoBehaviour
     }
 
     void atualizaEscudo(){
-        if(player.vidasP == 5){
+        if(player.vidasP == 7){
             ImageChange(ZeroHit);
         }
-        else if(player.vidasP == 4){
+        else if(player.vidasP == 6){
             ImageChange(first);
         }
-        else if(player.vidasP == 3){
+        else if(player.vidasP == 5){
             ImageChange(second);
         }
-        else if(player.vidasP == 2){
+        else if(player.vidasP == 4){
             ImageChange(third);
         }
-        else if(player.vidasP == 1){
+        else if(player.vidasP == 3){
             Destroy(this.gameObject);
         }
 
