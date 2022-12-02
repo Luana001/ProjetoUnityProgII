@@ -32,7 +32,7 @@ public class EscudoScript : MonoBehaviour
 
     void Update(){
 
-        if(player.vidasP==7 && vez == 1 || player.vidasP==6 && vez == 1){
+        if(player.vidasP==6 && vez == 1 || player.vidasP==5 && vez == 1){
             VariaQuebrado();
             vez = 2;
         }

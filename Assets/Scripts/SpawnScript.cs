@@ -12,13 +12,19 @@ public class SpawnScript : MonoBehaviour
    public GameObject morango;
    public GameObject escudo;
    public PersonagemScript player;
-   public float spawnTimeE = 10;
+   public float spawnTimeE = 12.9f, spawnTimeB = 19.3f, spawnTimeT = 8.7f, spawnTimeM = 23.8f;
 
    void Start() {
       player = GameObject.FindGameObjectWithTag("PersonagemTag").GetComponent<PersonagemScript>();
 
       InvokeRepeating("AdicionaAlimento", 1, 0.5f);
       InvokeRepeating("AdicionaEscudo", spawnTimeE, spawnTimeE);
+      
+      InvokeRepeating("AdicionaTomate", spawnTimeT, spawnTimeT);
+      
+      InvokeRepeating("AdicionaBrocolis", spawnTimeB, spawnTimeB);
+      
+      InvokeRepeating("AdicionaMorango", spawnTimeM, spawnTimeM);
    }
    
    Vector2 CriaPosicao() {
@@ -33,31 +39,6 @@ public class SpawnScript : MonoBehaviour
       var spawnPoint = CriaPosicao();
       int vez = Random.Range(1,4);
 
-      if(player.vidasP > 1 && player.vidasP < 7){
-         vez = Random.Range(1,7);
-         
-         switch(vez){
-            case 1: 
-               AdicionaBatata(spawnPoint);
-               break;
-            case 2:
-               AdicionaPizza(spawnPoint);
-               break;
-            case 3: 
-               AdicionaLanche(spawnPoint);
-               break;
-            case 4: 
-               AdicionaTomate(spawnPoint);
-               break;
-            case 5:
-               AdicionaBrocolis(spawnPoint);
-               break;
-            case 6:
-               AdicionaMorango(spawnPoint);
-               break;
-         }
-
-      } else {
          switch(vez){
             case 1: 
                AdicionaBatata(spawnPoint);
@@ -69,7 +50,6 @@ public class SpawnScript : MonoBehaviour
                AdicionaLanche(spawnPoint);
                break;
          }
-      }
    }
    
    void AdicionaPizza(Vector2 spawnPoint){
@@ -84,19 +64,27 @@ public class SpawnScript : MonoBehaviour
       Instantiate(lanche, spawnPoint, Quaternion.identity);
    }
 
-   void AdicionaTomate(Vector2 spawnPoint){
+   void AdicionaTomate(){
+      if(player.vidasP<3 || player.vidasP>3 && player.vidasP<7){
+      var spawnPoint = CriaPosicao();
       Instantiate(tomate, spawnPoint, Quaternion.identity);
+      }
    }
 
-   void AdicionaBrocolis(Vector2 spawnPoint){
+   void AdicionaBrocolis(){
+      if(player.vidasP>3){
+      var spawnPoint = CriaPosicao();
       Instantiate(brocolis, spawnPoint, Quaternion.identity);
+      }
    }
 
-   void AdicionaMorango(Vector2 spawnPoint){
+   void AdicionaMorango(){
+      if(player.vidasP>3){
+      var spawnPoint = CriaPosicao();
       Instantiate(morango, spawnPoint, Quaternion.identity);
+      }
    }
 
-   
    void AdicionaEscudo(){
       if(player.vidasP==3){
       var spawnPoint = CriaPosicao();

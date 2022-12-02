@@ -605,11 +605,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  vidasP: 5
+  vidasP: 7
   escudo: {fileID: 9144910820541728494, guid: 87526378bc851dc4791f03603baf6ff7, type: 3}
   afetado: 0
   invencivel: 0
   tiroEspecial: 0
+  normal: {fileID: 21300000, guid: 2171a9d4534a12b45b8abbff1f32febf, type: 3}
+  gordinho: {fileID: 21300000, guid: dd5c2b37a62f4054da4cc8c16777203e, type: 3}
+  obeso: {fileID: 21300000, guid: f0e9f740dd01dde4dbd3c21ef44e763a, type: 3}
 --- !u!1 &743029395
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +901,9 @@ MonoBehaviour:
   escudo: {fileID: 4099450229581920670, guid: dec5d74df07d73542b9dd13519a86501, type: 3}
   player: {fileID: 660110582}
   spawnTimeE: 10
+  spawnTimeB: 20.3
+  spawnTimeT: 5.7
+  spawnTimeM: 15.2
 --- !u!1 &1630170747
 GameObject:
   m_ObjectHideFlags: 0
