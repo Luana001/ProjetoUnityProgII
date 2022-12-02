@@ -11,6 +11,7 @@ public class PersonagemScript : MonoBehaviour
     public GameObject escudo;
     public int afetado = 0;
     public int invencivel = 0;
+    public int tiroEspecial = 0;
     
     void Start()
     {
@@ -76,6 +77,11 @@ public class PersonagemScript : MonoBehaviour
         invencivel = 0;
     }
 
+    IEnumerator voltarTiroNormal(float tempo){
+        yield return new WaitForSeconds(tempo);
+        tiroEspecial = 0;
+    }
+
    void OnTriggerEnter2D (Collider2D outro){
         if(invencivel == 0){
             if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
@@ -105,6 +111,11 @@ public class PersonagemScript : MonoBehaviour
         if(outro.gameObject.tag == "brocolisTag"){
             invencivel = 1;
             StartCoroutine(voltarNormal(10f));
+        }
+
+        if(outro.gameObject.tag == "morangoTag"){
+            tiroEspecial = 1;
+            StartCoroutine(voltarTiroNormal(10f));
         }
 
         Destroy(outro.gameObject);

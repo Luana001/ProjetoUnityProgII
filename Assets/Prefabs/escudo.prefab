@@ -130,8 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bala: {fileID: 1309851850442742245, guid: 599941570f1468c44923bd1cfd93d3a8, type: 3}
+  balaEspecial: {fileID: 6310602233139202039, guid: bc78888dddec6a2479284608ad6b2e07, type: 3}
   spawnBala: {fileID: 357252967475582052}
   cam: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6480692321540958215
 GameObject:
   m_ObjectHideFlags: 0

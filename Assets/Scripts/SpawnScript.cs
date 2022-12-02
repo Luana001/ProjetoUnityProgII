@@ -34,7 +34,7 @@ public class SpawnScript : MonoBehaviour
       int vez = Random.Range(1,4);
 
       if(player.vidasP > 1 && player.vidasP < 5){
-         vez = Random.Range(1,6);
+         vez = Random.Range(1,7);
          
          switch(vez){
             case 1: 
@@ -51,6 +51,9 @@ public class SpawnScript : MonoBehaviour
                break;
             case 5:
                AdicionaBrocolis(spawnPoint);
+               break;
+            case 6:
+               AdicionaMorango(spawnPoint);
                break;
          }
 
@@ -87,6 +90,10 @@ public class SpawnScript : MonoBehaviour
 
    void AdicionaBrocolis(Vector2 spawnPoint){
       Instantiate(brocolis, spawnPoint, Quaternion.identity);
+   }
+
+   void AdicionaMorango(Vector2 spawnPoint){
+      Instantiate(morango, spawnPoint, Quaternion.identity);
    }
 
    

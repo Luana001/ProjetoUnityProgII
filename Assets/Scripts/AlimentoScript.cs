@@ -39,6 +39,12 @@ public class AlimentoScript : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+
+        else if(outro.gameObject.tag == "BalaEspecialTag"){
+            ptScript.pontos = ptScript.pontos+ponto;
+            Destroy(outro.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
 }

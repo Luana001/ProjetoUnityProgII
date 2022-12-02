@@ -609,6 +609,7 @@ MonoBehaviour:
   escudo: {fileID: 9144910820541728494, guid: 87526378bc851dc4791f03603baf6ff7, type: 3}
   afetado: 0
   invencivel: 0
+  tiroEspecial: 0
 --- !u!1 &743029395
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,7 +894,7 @@ MonoBehaviour:
   lanche: {fileID: 8999390912124551129, guid: 860813bea76b7b44690ffd8c1c1bc3fd, type: 3}
   tomate: {fileID: 5276898598369841517, guid: b9081fc5d17727342b8674d617c175f3, type: 3}
   brocolis: {fileID: 2099952993785402859, guid: b97a5c4c41c15fa46b6c3b36644ee6f7, type: 3}
-  morango: {fileID: 0}
+  morango: {fileID: 5928684945017467656, guid: 1b16a92bb793edd4394258a2ce3bac25, type: 3}
   escudo: {fileID: 4099450229581920670, guid: dec5d74df07d73542b9dd13519a86501, type: 3}
   player: {fileID: 660110582}
   spawnTimeE: 10
