@@ -10,7 +10,8 @@ public class PersonagemScript : MonoBehaviour
     public int vidasP = 5;
     public GameObject escudo;
     public int afetado = 0;
-
+    public int invencivel = 0;
+    
     void Start()
     {
         //EscudoScript script =  escudo.gameObject.GetComponent<EscudoScript>();
@@ -64,39 +65,48 @@ public class PersonagemScript : MonoBehaviour
      }
    }
 
-    IEnumerator esperarTempo(float tempo){
+    IEnumerator desafetar(float tempo){
         yield return new WaitForSeconds(tempo);
         afetado=0;
         speed = 5;
     }
 
+    IEnumerator voltarNormal(float tempo){
+        yield return new WaitForSeconds(tempo);
+        invencivel = 0;
+    }
+
    void OnTriggerEnter2D (Collider2D outro){
-        if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
-            vidasP = vidasP - 1; 
-            Destroy(outro.gameObject);
-            if(vidasP==0){
-                Destroy(this.gameObject);
-                SceneManager.LoadScene("menu");
+        if(invencivel == 0){
+            if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
+                vidasP = vidasP - 1; 
+                if(vidasP==0){
+                    Destroy(this.gameObject);
+                    SceneManager.LoadScene("menu");
+                }
+            }
+            
+            if(outro.gameObject.tag == "ChicleteTag"){
+                speed = 1.6f;
+                afetado = 1;
+                StartCoroutine(desafetar(10f));
             }
         }
-        
+
         if(outro.gameObject.tag == "escudinhoTag"){
             vidasP = 3;
-            Destroy(outro.gameObject);
             Instantiate(escudo, gameObject.transform.position, Quaternion.identity, gameObject.transform);
         }
 
-        if(outro.gameObject.tag == "ChicleteTag"){
-            Destroy(outro.gameObject);
-            speed = 1.6f;
-            afetado = 1;
-            StartCoroutine(esperarTempo(10f));
-            
-        }
-
         if(outro.gameObject.tag == "tomateTag" && vidasP < 6){
-            Destroy(outro.gameObject);
             vidasP = vidasP + 1;
         }
+
+        if(outro.gameObject.tag == "brocolisTag"){
+            invencivel = 1;
+            StartCoroutine(voltarNormal(10f));
+        }
+
+        Destroy(outro.gameObject);
    }
 }

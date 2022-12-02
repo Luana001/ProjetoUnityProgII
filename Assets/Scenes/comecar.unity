@@ -347,7 +347,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 28c9431e38f316045b0e33dd07a53c82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -607,6 +607,8 @@ MonoBehaviour:
   speed: 5
   vidasP: 5
   escudo: {fileID: 9144910820541728494, guid: 87526378bc851dc4791f03603baf6ff7, type: 3}
+  afetado: 0
+  invencivel: 0
 --- !u!1 &743029395
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +891,9 @@ MonoBehaviour:
   batata: {fileID: 8371697585686499806, guid: 168ab731b4a60804fb6dd6d45b9cbad1, type: 3}
   pizza: {fileID: 8662952601170329896, guid: 24d999b43f40e8a468b7282b56298e78, type: 3}
   lanche: {fileID: 8999390912124551129, guid: 860813bea76b7b44690ffd8c1c1bc3fd, type: 3}
-  tomate: {fileID: 3304844539971228072, guid: f6785390c5cc06c4994607883001ae00, type: 3}
+  tomate: {fileID: 5276898598369841517, guid: b9081fc5d17727342b8674d617c175f3, type: 3}
+  brocolis: {fileID: 2099952993785402859, guid: b97a5c4c41c15fa46b6c3b36644ee6f7, type: 3}
+  morango: {fileID: 0}
   escudo: {fileID: 4099450229581920670, guid: dec5d74df07d73542b9dd13519a86501, type: 3}
   player: {fileID: 660110582}
   spawnTimeE: 10
@@ -999,7 +1003,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 60d1545f1ba620b4882604866dc60c77, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7294118}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.54901963}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

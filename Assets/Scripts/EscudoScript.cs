@@ -26,6 +26,7 @@ public class EscudoScript : MonoBehaviour
     void Start()
     {
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        gameObject.transform.GetChild(2).gameObject.SetActive(false);
         player = gameObject.GetComponentInParent<PersonagemScript>();
     }
 
@@ -71,6 +72,13 @@ public class EscudoScript : MonoBehaviour
         }
         else{
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        }
+
+        if(player.invencivel==1){
+            gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        }
+        else{
+            gameObject.transform.GetChild(2).gameObject.SetActive(false);
         }
     }
 
