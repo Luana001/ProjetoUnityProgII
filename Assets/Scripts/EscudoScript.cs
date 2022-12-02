@@ -5,6 +5,8 @@ using UnityEngine;
 public class EscudoScript : MonoBehaviour
 {
     Sprite first, second, third;
+    
+    public Sprite ZeroHit;
 
     //Variação I
     public Sprite IHit, IIHit, IIIHit;
@@ -18,16 +20,27 @@ public class EscudoScript : MonoBehaviour
     //Variação IV
     public Sprite IHitV4, IIHitV4, IIIHitV4;
 
-    public int vidas = 4;
-    public int afetado = 0;
-    //public GameObject escudoChiclete;
+    public PersonagemScript player;
+    private int vez = 1;
 
     void Start()
     {
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        player = gameObject.GetComponentInParent<PersonagemScript>();
     }
 
     void Update(){
+
+        if(player.vidasP==4 && vez == 1 || player.vidasP==3 && vez == 1){
+            VariaQuebrado();
+            vez = 2;
+        }
+
+        if(player.vidasP == 5 && vez == 2){
+            vez = 1;
+        }
+
+
         atualizaEscudo();
     }
 
@@ -36,40 +49,24 @@ public class EscudoScript : MonoBehaviour
         spriteRenderer.sprite = newImage;
     }
 
-    IEnumerator esperarTempo(float tempo){
-        yield return new WaitForSeconds(tempo);
-        afetado=0;
-    }
-
-    void OnTriggerEnter2D (Collider2D outro){
-        if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
-            vidas = vidas - 1;
-
-            if(vidas==3){
-                VariaQuebrado();
-            }
-        }
-        else if(outro.gameObject.tag == "ChicleteTag"){
-            afetado = 1;
-            StartCoroutine(esperarTempo(10f));
-        }
-    }
-
     void atualizaEscudo(){
-        if(vidas == 3){
+        if(player.vidasP == 5){
+            ImageChange(ZeroHit);
+        }
+        else if(player.vidasP == 4){
             ImageChange(first);
         }
-        else if(vidas == 2){
+        else if(player.vidasP == 3){
             ImageChange(second);
         }
-        else if(vidas == 1){
+        else if(player.vidasP == 2){
             ImageChange(third);
         }
-        else if(vidas == 0){
+        else if(player.vidasP == 1){
             Destroy(this.gameObject);
         }
 
-        if(afetado==1){
+        if(player.afetado==1){
             gameObject.transform.GetChild(1).gameObject.SetActive(true); 
         }
         else{

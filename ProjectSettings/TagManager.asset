@@ -12,6 +12,7 @@ TagManager:
   - BalaTag
   - ChicleteTag
   - PontuacaoTag
+  - tomateTag
   layers:
   - Default
   - TransparentFX

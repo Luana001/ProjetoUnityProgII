@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 14ab6100659773c4c8f8ac81115bf340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa3a74edf63bc7469e8331216b66f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZeroHit: {fileID: 21300000, guid: 75e9ad94078b429408c822b94bea8c56, type: 3}
   IHit: {fileID: 21300000, guid: 058d598202e6d91459c6ed906409981f, type: 3}
   IIHit: {fileID: 21300000, guid: cd9dcf43ad039c742adff843fbcb0c98, type: 3}
   IIIHit: {fileID: 21300000, guid: 985726f64dba676419f57bbd2c0a7e0e, type: 3}
@@ -346,3 +347,4 @@ MonoBehaviour:
   IIIHitV4: {fileID: 21300000, guid: 937dd3dcccbb218498b02268274f6daf, type: 3}
   vidas: 4
   afetado: 0
+  player: {fileID: 0}

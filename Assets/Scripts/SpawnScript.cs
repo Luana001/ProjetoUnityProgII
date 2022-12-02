@@ -7,6 +7,7 @@ public class SpawnScript : MonoBehaviour
    public GameObject batata;
    public GameObject pizza;
    public GameObject lanche; 
+   public GameObject tomate;
    public GameObject escudo;
    public PersonagemScript player;
    public float spawnTimeE = 10;
@@ -30,17 +31,36 @@ public class SpawnScript : MonoBehaviour
       var spawnPoint = CriaPosicao();
       int vez = Random.Range(1,4);
 
-      switch(vez){
-         case 1: 
-            AdicionaBatata(spawnPoint);
-            break;
-         case 2:
-            AdicionaPizza(spawnPoint);
-            break;
-         case 3: 
-            AdicionaLanche(spawnPoint);
-            break;
+      if(player.vidasP > 1 && player.vidasP < 5){
+         vez = Random.Range(1,5);
          
+         switch(vez){
+            case 1: 
+               AdicionaBatata(spawnPoint);
+               break;
+            case 2:
+               AdicionaPizza(spawnPoint);
+               break;
+            case 3: 
+               AdicionaLanche(spawnPoint);
+               break;
+            case 4: 
+               AdicionaTomate(spawnPoint);
+               break;
+         }
+
+      } else {
+         switch(vez){
+            case 1: 
+               AdicionaBatata(spawnPoint);
+               break;
+            case 2:
+               AdicionaPizza(spawnPoint);
+               break;
+            case 3: 
+               AdicionaLanche(spawnPoint);
+               break;
+         }
       }
    }
    
@@ -54,6 +74,10 @@ public class SpawnScript : MonoBehaviour
 
    void AdicionaLanche(Vector2 spawnPoint){
       Instantiate(lanche, spawnPoint, Quaternion.identity);
+   }
+
+   void AdicionaTomate(Vector2 spawnPoint){
+      Instantiate(tomate, spawnPoint, Quaternion.identity);
    }
    
    void AdicionaEscudo(){

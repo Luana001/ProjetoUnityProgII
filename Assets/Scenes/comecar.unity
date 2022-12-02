@@ -889,6 +889,7 @@ MonoBehaviour:
   batata: {fileID: 8371697585686499806, guid: 168ab731b4a60804fb6dd6d45b9cbad1, type: 3}
   pizza: {fileID: 8662952601170329896, guid: 24d999b43f40e8a468b7282b56298e78, type: 3}
   lanche: {fileID: 8999390912124551129, guid: 860813bea76b7b44690ffd8c1c1bc3fd, type: 3}
+  tomate: {fileID: 3304844539971228072, guid: f6785390c5cc06c4994607883001ae00, type: 3}
   escudo: {fileID: 4099450229581920670, guid: dec5d74df07d73542b9dd13519a86501, type: 3}
   player: {fileID: 660110582}
   spawnTimeE: 10
