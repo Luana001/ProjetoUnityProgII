@@ -27,33 +27,32 @@ public class EscudoScript : MonoBehaviour
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
     }
 
+    void Update(){
+        atualizaEscudo();
+    }
+
     public void ImageChange(Sprite newImage){
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = newImage;
     }
 
     IEnumerator esperarTempo(float tempo){
-        atualizaEscudoChiclete();
         yield return new WaitForSeconds(tempo);
         afetado=0;
-        atualizaEscudoChiclete();
     }
 
     void OnTriggerEnter2D (Collider2D outro){
         if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
             vidas = vidas - 1;
+
+            if(vidas==3){
+                VariaQuebrado();
+            }
         }
         else if(outro.gameObject.tag == "ChicleteTag"){
             afetado = 1;
             StartCoroutine(esperarTempo(10f));
         }
-
-        if(vidas==3 && afetado==0){
-            VariaQuebrado();
-        }
-
-        atualizaEscudo();
-        
     }
 
     void atualizaEscudo(){
@@ -69,16 +68,13 @@ public class EscudoScript : MonoBehaviour
         else if(vidas == 0){
             Destroy(this.gameObject);
         }
-    }
 
-    void atualizaEscudoChiclete(){
         if(afetado==1){
             gameObject.transform.GetChild(1).gameObject.SetActive(true); 
         }
         else{
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
         }
-
     }
 
     void QuebradoV1(){
