@@ -423,8 +423,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -347.89, y: 237.88}
-  m_SizeDelta: {x: 714.72, y: 390.47}
+  m_AnchoredPosition: {x: -347.89, y: 193.43}
+  m_SizeDelta: {x: 714.72, y: 472.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965410781
 MonoBehaviour:
@@ -448,7 +448,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4f0ccf2c7004c77449d60ba12783baa7, type: 3}
-    m_FontSize: 30
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -460,7 +460,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "JOGO REALIZADO POR - LUANA PINHIERO, JO\xC3O EDUARDO PERTILE, GIOVANNI
-    MARCHAN\ncOMIDAS"
+    MARCHAN\n\nSPRITES REALIZAODS POR - LUANA PINHIERO, JO\xC3O EDUARDO PERTILE,
+    GIOVANNI MARCHAN\n\nCOMIDAS - food and kitchenware icons\n\nSONS - PEGOS DA INTERNET"
 --- !u!222 &965410782
 CanvasRenderer:
   m_ObjectHideFlags: 0
