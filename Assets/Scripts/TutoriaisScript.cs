@@ -23,5 +23,8 @@ public class TutoriaisScript : MonoBehaviour
     public void OnClickPowerUp(){
          SceneManager.LoadScene("tutorialPowerUp");
     }
+      public void OnClickAndar(){
+         SceneManager.LoadScene("tutorialAndar");
+    }
 }
 

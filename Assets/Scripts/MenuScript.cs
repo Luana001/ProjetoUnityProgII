@@ -16,6 +16,10 @@ public class MenuScript : MonoBehaviour
     public void OnClickCreditos(){
          SceneManager.LoadScene("creditos");
     }
+
+    public void OnClickTutorial(){
+         SceneManager.LoadScene("tutorialAndar");
+    }
     
     public void OnClickExitGame(){
          Application.Quit();

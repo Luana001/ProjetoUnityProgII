@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/placar.unity
     guid: 9226771913b13364cac297b53ecdb6d8
+  - enabled: 1
+    path: Assets/Scenes/tutorialAndar.unity
+    guid: 911eb003623928f49895e29d96de18cf
+  - enabled: 1
+    path: Assets/Scenes/tutorialEscudo.unity
+    guid: 589be5b40d4e39642adfa2fa98aa668a
+  - enabled: 1
+    path: Assets/Scenes/tutorialPowerUp.unity
+    guid: c7c18c579b09b7c4d827d190888005ba
+  - enabled: 1
+    path: Assets/Scenes/tutorialObstaculos.unity
+    guid: 2b21c337e8fdf044b875a2463ad04fca
   m_configObjects: {}
