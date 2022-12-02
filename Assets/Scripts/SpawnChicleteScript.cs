@@ -35,6 +35,8 @@ public class SpawnChicleteScript : MonoBehaviour
    }
 
    void Adicionachiclete(Vector2 spawnPoint){
+    //Verfica de qual lado esta o GameObject de spawn  
+        //E chama a função do chiclete que define para qual lado ele vai ir, mudando a variavel speed
         if(transform.position.x>0){
             ChicleteScript script = chiclete.gameObject.GetComponent<ChicleteScript>();
             script.setLado(2);

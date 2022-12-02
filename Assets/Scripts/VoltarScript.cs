@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class VoltarScript : MonoBehaviour
 {
-    void Update()
-    {
-        
-    }
-
     public void OnClickVoltar(){
          SceneManager.LoadScene("menu");
     }

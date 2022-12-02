@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AlimentoScript : MonoBehaviour
 {
+    //Classe "Mãe" de outros objetos que o personagem deve acertar
+    //Computa os pontos de acordo com o valor de cada filho
+    //Também destroi o objeto baseado na vida do objeto filho
     public float speed = -2;
     public int forca;
     public int ponto;
@@ -25,6 +28,7 @@ public class AlimentoScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D outro)
     {
+        //Caso seja a bala comum a variavel força precisa chegar a 0 para o objeto ser destruido e ser contado a pontuação
         if (outro.gameObject.tag == "BalaTag")
         {
             if (forca > 0)
@@ -40,6 +44,7 @@ public class AlimentoScript : MonoBehaviour
             }
         }
 
+    //Caso o bala seja especial o objeto é destruido automaticamente e os pontos são computados
         else if(outro.gameObject.tag == "BalaEspecialTag"){
             ptScript.pontos = ptScript.pontos+ponto;
             Destroy(outro.gameObject);

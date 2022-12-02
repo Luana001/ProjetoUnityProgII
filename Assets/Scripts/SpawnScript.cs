@@ -65,6 +65,7 @@ public class SpawnScript : MonoBehaviour
    }
 
    void AdicionaTomate(){
+      //Cria o prefab do tomate quando o personagem precisar ganhar vida 
       if(player.vidasP<3 || player.vidasP>3 && player.vidasP<7){
       var spawnPoint = CriaPosicao();
       Instantiate(tomate, spawnPoint, Quaternion.identity);
@@ -72,6 +73,7 @@ public class SpawnScript : MonoBehaviour
    }
 
    void AdicionaBrocolis(){
+      //Cria o prefab do brocolis sempre que o personagem estiver com escudo 
       if(player.vidasP>3){
       var spawnPoint = CriaPosicao();
       Instantiate(brocolis, spawnPoint, Quaternion.identity);
@@ -79,6 +81,7 @@ public class SpawnScript : MonoBehaviour
    }
 
    void AdicionaMorango(){
+      //Cria o prefab do morango sempre que o personagem esttiver com escudo
       if(player.vidasP>3){
       var spawnPoint = CriaPosicao();
       Instantiate(morango, spawnPoint, Quaternion.identity);
@@ -86,6 +89,7 @@ public class SpawnScript : MonoBehaviour
    }
 
    void AdicionaEscudo(){
+      //Cria o prefab do escudo quando o personagem perde-lo
       if(player.vidasP==3){
       var spawnPoint = CriaPosicao();
       Instantiate(escudo, spawnPoint, Quaternion.identity);

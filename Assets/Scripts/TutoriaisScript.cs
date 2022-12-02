@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TutoriaisScript : MonoBehaviour
 {
-    void Update()
-    {
-        
-    }
     public void OnClickStartGame(){
          SceneManager.LoadScene("comecar");
     }

@@ -17,11 +17,13 @@ public class ArmaScript : MonoBehaviour
        player = gameObject.GetComponentInParent<PersonagemScript>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Pega a posição do mouse na cena e passa para o vetor 
         posMouse = cam.ScreenToWorldPoint (Input.mousePosition);
+        //Fixa a posição no eixo z para não movimentar nesse eixo 
         posMouse.z = transform.position.z; 
+        //Modifica a posição da arma para a direção da posição do mouse
         transform.up = (posMouse-transform.position);
         Atirar();
     }
@@ -30,6 +32,7 @@ public class ArmaScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) {
 
+            //Verifica se a variavel do personagem é igual a 1 e cria a bala de acordo 
             if(player.tiroEspecial==1){
                 Instantiate(balaEspecial, spawnBala.transform.position, Quaternion.identity);
             }

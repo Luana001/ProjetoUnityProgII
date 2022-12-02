@@ -25,32 +25,39 @@ public class EscudoScript : MonoBehaviour
 
     void Start()
     {
+        //Desativa (tira) da cena o objeto, que armazena o sprite do escudo afetado 
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        //Desativa (tira) da cena o objeto, que armazena o sprite do escudo invencivel
         gameObject.transform.GetChild(2).gameObject.SetActive(false);
         player = gameObject.GetComponentInParent<PersonagemScript>();
     }
 
     void Update(){
 
+        //Chama uma função que define os sprites a serem apresentados nas alterações de escudos quebrados
+        //Acontece na primeira vez que o personagem perder uma vida 
+        //Ou quando o escudo for instanciado novamente pelo personagem com 5 vidas 
         if(player.vidasP==6 && vez == 1 || player.vidasP==5 && vez == 1){
             VariaQuebrado();
             vez = 2;
         }
 
+        //Chama a função de novo para randomizar os escudos quebrados quando o personagem conseguir todas as vidas novamente
         if(player.vidasP == 7 && vez == 2){
             vez = 1;
         }
-
 
         atualizaEscudo();
     }
 
     public void ImageChange(Sprite newImage){
+        //Pega o SpriteRenderer do inspector para alterar o sprite para a nova imagem desejada
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = newImage;
     }
 
     void atualizaEscudo(){
+        //Chama a função que altera o sprite do escudo de acordo com a quantidade de vida do personagem
         if(player.vidasP == 7){
             ImageChange(ZeroHit);
         }
@@ -67,6 +74,8 @@ public class EscudoScript : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        //Ativa na cena o objeto na cena que armazena o sprite do escudo afetado
+        //E desativa quando a variavel voltar a ser 0
         if(player.afetado==1){
             gameObject.transform.GetChild(1).gameObject.SetActive(true); 
         }
@@ -74,6 +83,8 @@ public class EscudoScript : MonoBehaviour
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
         }
 
+        //Ativa na cena o objeto na cena que armazena o sprite do escudo invencivel
+        //E desativa quando a variavel voltar a ser 0
         if(player.invencivel==1){
             gameObject.transform.GetChild(2).gameObject.SetActive(true);
         }

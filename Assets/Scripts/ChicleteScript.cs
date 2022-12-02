@@ -10,12 +10,8 @@ public class ChicleteScript : MonoBehaviour
         SetVelocidade();
     }
 
-   
-    void Update()
-    {
-        
-    }
-
+    //Define para qual lado o chiclete vai ir na cena, 
+        //multiplicando por um valor negativo para mudar a velocidade 
     public void setLado(int lado){
         if(lado==2){
             speed = speed*-1;

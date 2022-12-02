@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickStartGame(){
          SceneManager.LoadScene("comecar");
     }

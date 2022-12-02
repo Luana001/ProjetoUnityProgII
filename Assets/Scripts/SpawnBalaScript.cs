@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SpawnBalaScript : MonoBehaviour
 {
+    //GameObject invisivel feito para definir o local de spawn da bala
     public Camera Cam;
     private Vector3 PosMouse;
-    
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         PosMouse = Cam.ScreenToWorldPoint (Input.mousePosition);
