@@ -808,7 +808,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "A CADA DANO RECEBIDO O ESCUDO SOFRER\xC1, MAS N\xC3O SE PREOCUPE\n\xC9
-    POSSIVEL RECUPERAL\xD3\n\n\n\n\n"
+    POSSIVEL RECUPERA-LO\n\n\n\n\n"
 --- !u!222 &825004524
 CanvasRenderer:
   m_ObjectHideFlags: 0

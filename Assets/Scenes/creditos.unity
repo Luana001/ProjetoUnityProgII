@@ -448,7 +448,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4f0ccf2c7004c77449d60ba12783baa7, type: 3}
-    m_FontSize: 45
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -461,7 +461,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "JOGO REALIZADO POR - LUANA PINHIERO, JO\xC3O EDUARDO PERTILE, GIOVANNI
     MARCHAN\n\nSPRITES REALIZAODS POR - LUANA PINHIERO, JO\xC3O EDUARDO PERTILE,
-    GIOVANNI MARCHAN\n\nCOMIDAS - food and kitchenware icons\n\nSONS - PEGOS DA INTERNET"
+    GIOVANNI MARCHAN\n\nCOMIDAS - food and kitchenware icons\n\n\t\t                 
+    SONS\nhttps://mixkit.co/free-sound-effects/game/\n\nhttps://freesound.org/people/Mrthenoronha/sounds/653527/"
 --- !u!222 &965410782
 CanvasRenderer:
   m_ObjectHideFlags: 0

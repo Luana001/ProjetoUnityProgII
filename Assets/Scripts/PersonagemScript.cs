@@ -15,6 +15,9 @@ public class PersonagemScript : MonoBehaviour
     public Sprite normal;
     public Sprite gordinho;
     public Sprite obeso;
+    public AudioClip comer;
+    public AudioClip dano;
+    
     
     void Start()
     {
@@ -89,6 +92,7 @@ public class PersonagemScript : MonoBehaviour
         if(invencivel == 0){
             if(outro.gameObject.tag == "batataTag" || outro.gameObject.tag == "pizzaTag" || outro.gameObject.tag == "lancheTag"){
                 vidasP = vidasP - 1; 
+                AudioSource.PlayClipAtPoint(dano,transform.position);
                 if(vidasP==0){
                     Destroy(this.gameObject);
                     SceneManager.LoadScene("menu");
@@ -96,6 +100,7 @@ public class PersonagemScript : MonoBehaviour
             }
             
             if(outro.gameObject.tag == "ChicleteTag"){
+                AudioSource.PlayClipAtPoint(dano,transform.position);
                 speed = 1.6f;
                 afetado = 1;
                 //Inicia um coroutine que espera um tempo para depois atualizar a variavel afetado pra 0 novamente
@@ -107,20 +112,24 @@ public class PersonagemScript : MonoBehaviour
         if(outro.gameObject.tag == "escudinhoTag"){
             vidasP = 5;
             Instantiate(escudo, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+            AudioSource.PlayClipAtPoint(comer,transform.position);
         }
 
         if(outro.gameObject.tag == "tomateTag" && vidasP < 7){
             vidasP = vidasP + 1;
+            AudioSource.PlayClipAtPoint(comer,transform.position);
         }
 
         if(outro.gameObject.tag == "brocolisTag"){
             invencivel = 1;
+            AudioSource.PlayClipAtPoint(comer,transform.position);
             //Inicia um coroutine que espera um tempo para depois atualizar a variavel invencivel pra 0 novamente
             StartCoroutine(voltarNormal(10f));
         }
 
         if(outro.gameObject.tag == "morangoTag"){
             tiroEspecial = 1;
+            AudioSource.PlayClipAtPoint(comer,transform.position);
             //Inicia um coroutine que espera um tempo para depois atualizar a variavel tiroEspecial pra 0 novamente
             StartCoroutine(voltarTiroNormal(10f));
         }
